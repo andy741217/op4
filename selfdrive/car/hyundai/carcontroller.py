@@ -120,10 +120,7 @@ class CarController():
     if not lkas_active:
       apply_steer = 0
     
-    if CS.CP.radarOffCan:
-      self.scc_live = not self.cp_oplongcontrol
-    elif (CS.cancel_button_count == 3) and self.cp_longcontrol:
-      self.scc_live = not self.scc_live
+   
     
     self.apply_accel_last = apply_accel
     self.apply_steer_last = apply_steer
@@ -223,7 +220,7 @@ class CarController():
       controls.aReqValueMax = controls.aReqValue
 
     # send scc to car if longcontrol enabled and SCC not on bus 0 or ont live
-    if self.longcontrol and (CS.scc_bus or not self.scc_live):
+    if self.longcontrol:
 
       if frame % 2 == 0:
 
