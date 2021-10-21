@@ -223,7 +223,7 @@ class CarController():
       controls.aReqValueMax = controls.aReqValue
 
     # send scc to car if longcontrol enabled and SCC not on bus 0 or ont live
-    if self.longcontrol and CS.cruiseState_enabled and (CS.scc_bus or not self.scc_live):
+    if self.longcontrol and (CS.scc_bus or not self.scc_live):
 
       if frame % 2 == 0:
 
